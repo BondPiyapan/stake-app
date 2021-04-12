@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Pilling",
+    "slug": "stake-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/appicon_spark.png",
+    "splash": {
+      "image": "./assets/splash2.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/appicon_spark.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.ballza95.stakeapp"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
