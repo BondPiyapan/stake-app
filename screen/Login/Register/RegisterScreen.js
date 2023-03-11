@@ -10,7 +10,6 @@ import {
     TextInput,
     Button,
     Dimensions,
-    AsyncStorage,
     Alert,
     ImageBackground,
     KeyboardAvoidingView,

@@ -8,12 +8,11 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  AsyncStorage,
   TextInput,
   SafeAreaView,
   KeyboardAvoidingView
 } from 'react-native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const { height, width } = Dimensions.get('window')
 import Images from 'react-native-scalable-image';
 import PhoneInput from "react-native-phone-number-input";

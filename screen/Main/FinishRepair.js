@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  AsyncStorage,
   TextInput,
   SafeAreaView,
   Modal,
@@ -26,7 +25,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { Asset } from 'expo-asset';
 import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
 import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
+// import * as Permissions from 'expo-permissions';
 export default class FinishRepair extends React.Component {
   static navigationOptions = {
     headerShown: false,

@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  AsyncStorage,
   TextInput,
   SafeAreaView,
   Modal,
@@ -26,10 +25,9 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { Asset } from 'expo-asset';
 import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
 import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
+import { Camera } from "expo-camera";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import moment, { locale } from 'moment';
-import firebase from 'firebase'; // 4.8.1
 export default class RepairScreen extends React.Component {
 
 
@@ -79,12 +77,13 @@ export default class RepairScreen extends React.Component {
   }
 
   async getPermissionCamera() {
-    const { status } = await Permissions.getAsync(Permissions.CAMERA);
-    if (status !== 'granted') {
-      await Permissions.askAsync(Permissions.CAMERA);
-      console.log('CAMERA for not enabled.');
-    } else {
-      console.log(status + 'CAMERA enabled');
+    const { status } = await Camera.requestCameraPermissionsAsync();
+    if (status !== "granted") {
+      Alert.alert(
+        "Camera Permission",
+        "Please give a camera permission in order to take a photo."
+      );
+      return;
     }
   }
 
@@ -169,26 +168,26 @@ export default class RepairScreen extends React.Component {
     //   }).catch(err => {
     //     Alert.alert("An Error Occured While Uploading")
     //   })
-    if (this.state.date != null) {
-      if (this.state.value == 0) {
-        var typetxt = 'โครงสร้าง'
-      } else if (this.state.value == 1) {
-        var typetxt = 'ทั่วไป'
-      }
-      firebase.database().ref('dataRepair').push(
-        {
-          datauser: datauser,
-          img: 'https://f.ptcdn.info/631/056/000/p5o0qd2ogbTGVDyQoI-o.jpg',
-          dateRepair: this.state.date,
-          type: typetxt,
-          reason: this.state.msgReason,
+    // if (this.state.date != null) {
+    //   if (this.state.value == 0) {
+    //     var typetxt = 'โครงสร้าง'
+    //   } else if (this.state.value == 1) {
+    //     var typetxt = 'ทั่วไป'
+    //   }
+    //   firebase.database().ref('dataRepair').push(
+    //     {
+    //       datauser: datauser,
+    //       img: 'https://f.ptcdn.info/631/056/000/p5o0qd2ogbTGVDyQoI-o.jpg',
+    //       dateRepair: this.state.date,
+    //       type: typetxt,
+    //       reason: this.state.msgReason,
 
-        }).then(
-          this.props.navigation.navigate('FinishRepair')
-        )
-    } else {
-      alert('กรุณากรอกข้อมูลให้ครบ')
-    }
+    //     }).then(
+    //       this.props.navigation.navigate('FinishRepair')
+    //     )
+    // } else {
+    //   alert('กรุณากรอกข้อมูลให้ครบ')
+    // }
 
 
   }

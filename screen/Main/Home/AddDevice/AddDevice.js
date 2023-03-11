@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
     View,
     Dimensions,
-    AsyncStorage,
     TextInput,
     SafeAreaView,
     FlatList

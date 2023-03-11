@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  AsyncStorage,
   TextInput,
   SafeAreaView,
   Modal,
@@ -27,7 +26,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { Asset } from 'expo-asset';
 import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
 import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
+import { Camera } from "expo-camera";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import moment, { locale } from 'moment';
 export default class DetailCompany extends React.Component {
@@ -58,12 +57,13 @@ export default class DetailCompany extends React.Component {
   }
 
   async getPermissionCamera() {
-    const { status } = await Permissions.getAsync(Permissions.CAMERA);
-    if (status !== 'granted') {
-      await Permissions.askAsync(Permissions.CAMERA);
-      console.log('CAMERA for not enabled.');
-    } else {
-      console.log(status + 'CAMERA enabled');
+    const { status } = await Camera.requestCameraPermissionsAsync();
+    if (status !== "granted") {
+      Alert.alert(
+        "Camera Permission",
+        "Please give a camera permission in order to take a photo."
+      );
+      return;
     }
   }
 

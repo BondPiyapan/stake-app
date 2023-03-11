@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View, AsyncStorage, ActivityIndicator, YellowBox, I18nManager as RNI18nManager, } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, ActivityIndicator, YellowBox, I18nManager as RNI18nManager, } from 'react-native';
 import AppLoading from 'expo-app-loading'
 import * as Icon from '@expo/vector-icons'
 import { Asset } from 'expo-asset'
@@ -8,7 +8,6 @@ import * as Font from 'expo-font'
 import AppNavigator from './navigation/AppNavigator';
 YellowBox.ignoreWarnings(['Warning:', 'Yellow', 'font', 'De', 'V', 'Animated']);
 const ACCESS_NOTI = 'access_noti';
-import firebase from 'firebase';
 
 export default class App extends React.Component {
   state = {
@@ -27,15 +26,6 @@ export default class App extends React.Component {
 
 
     UNSAFE_componentWillMount(){
-      var config = {
-        apiKey: "AIzaSyCL157cIvTkMBYTlyegl5FHp0NDHK-xRLA",
-        authDomain: "repair-condo-aaa73.firebaseapp.com",
-        projectId: "repair-condo-aaa73",
-        storageBucket: "repair-condo-aaa73.appspot.com",
-        messagingSenderId: "102178065031",
-        appId: "1:102178065031:web:97bdea8e33b66159470622"
-      };
-      firebase.initializeApp(config);
       // // loadLocale()
       // this._notificationSubscription = Notifications.addListener(this._handleNotification);
       // if (Platform.OS === 'android') {

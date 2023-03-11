@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
     View,
     Dimensions,
-    AsyncStorage,
     ActivityIndicator,
     SafeAreaView
 } from 'react-native';

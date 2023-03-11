@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  AsyncStorage,
   TextInput,
   SafeAreaView,
   Modal,
@@ -24,7 +23,6 @@ import Constants from 'expo-constants'
 import * as Icon from '@expo/vector-icons'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Asset } from 'expo-asset';
-import firebase from 'firebase'; // 4.8.1
 export default class MainEngineerScreen extends React.Component {
 
 

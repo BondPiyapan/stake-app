@@ -8,13 +8,13 @@ import {
   TouchableOpacity,
   View,
   Dimensions,
-  AsyncStorage,
   TextInput,
   SafeAreaView,
   Modal,
   ImageBackground,
   FlatList
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Slider from "react-native-smooth-slider";
 import MapView, { Callout, Marker, Polygon } from 'react-native-maps';
 const { height, width } = Dimensions.get('window')

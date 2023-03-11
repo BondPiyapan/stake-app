@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
     View,
     Dimensions,
-    AsyncStorage,
     TextInput,
     SafeAreaView,
     Modal,
@@ -21,7 +20,6 @@ import Images from 'react-native-scalable-image';
 import PhoneInput from "react-native-phone-number-input";
 import Constants from 'expo-constants'
 import * as Icon from '@expo/vector-icons'
-import CircleSlider from "react-native-circle-slider";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 

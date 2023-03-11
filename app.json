@@ -4,6 +4,7 @@
     "slug": "stake-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "jsEngine": "hermes",
     "icon": "./assets/appicon_spark.png",
     "splash": {
       "image": "./assets/splash2.png",
